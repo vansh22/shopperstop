@@ -39,7 +39,7 @@ function App() {
     if (localStorage.getItem("token")) {
       const authToken = localStorage.getItem("token");
       const getUserData = async () => {
-        const response = await fetch("http://localhost:5000/api/auth/getuser", {
+        const response = await fetch("https://shopperstop-server.onrender.com/api/auth/getuser", {
           method: "GET",
           headers: {
             "auth-token": authToken,
@@ -60,7 +60,7 @@ function App() {
       try {
         const authToken = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:5000/api/products/cart?userId=${userId}`,
+          `https://shopperstop-server.onrender.com/api/products/cart?userId=${userId}`,
           {
             headers: {
               "auth-token": authToken,

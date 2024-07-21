@@ -18,7 +18,7 @@ const Products = ({ IncreaseCartCount, DecreaseCartCount, search }) => {
         const authToken = localStorage.getItem("token");
         try {
           const response = await axios.get(
-            "http://localhost:5000/api/auth/getuser",
+            "https://shopperstop-server.onrender.com/api/auth/getuser",
             {
               headers: {
                 "auth-token": authToken,
@@ -41,7 +41,7 @@ const Products = ({ IncreaseCartCount, DecreaseCartCount, search }) => {
       try {
         const authToken = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:5000/api/products/cart?userId=${userId}`,
+          `https://shopperstop-server.onrender.com/api/products/cart?userId=${userId}`,
           {
             headers: {
               "auth-token": authToken,
@@ -67,7 +67,7 @@ const Products = ({ IncreaseCartCount, DecreaseCartCount, search }) => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/products/getproducts"
+          "https://shopperstop-server.onrender.com/api/products/getproducts"
         );
         setProducts(response.data);
       } catch (error) {
@@ -104,7 +104,7 @@ const Products = ({ IncreaseCartCount, DecreaseCartCount, search }) => {
     try {
       const authToken = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/products/add-to-cart",
+        "https://shopperstop-server.onrender.com/api/products/add-to-cart",
         {
           userId,
           productId,
@@ -131,7 +131,7 @@ const Products = ({ IncreaseCartCount, DecreaseCartCount, search }) => {
       try {
         const authToken = localStorage.getItem("token");
         const response = await axios.delete(
-          "http://localhost:5000/api/products/delete-cart",
+          "https://shopperstop-server.onrender.com/api/products/delete-cart",
           {
             data: { userId }, // Send userId in the request body
             headers: {
@@ -155,7 +155,7 @@ const Products = ({ IncreaseCartCount, DecreaseCartCount, search }) => {
     try {
       const authToken = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/products/increment-quantity",
+        "https://shopperstop-server.onrender.com/api/products/increment-quantity",
         {
           userId,
           productId,
@@ -184,7 +184,7 @@ const Products = ({ IncreaseCartCount, DecreaseCartCount, search }) => {
     try {
       const authToken = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/products/decrement-quantity",
+        "https://shopperstop-server.onrender.com/api/products/decrement-quantity",
         {
           userId,
           productId,
