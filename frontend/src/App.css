@@ -31,11 +31,13 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 50px; 
+  pointer-events: none;
 }
 
 .alert {
   width: 60%; 
   text-align: center;
+  pointer-events: auto;
 }
 
 /* Colors for different alert types */
